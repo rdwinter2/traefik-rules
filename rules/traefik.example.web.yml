@@ -1,0 +1,20 @@
+http:
+  routers:
+    git-io:
+      rule: "Host(`traefik.example.web`)"
+      service: "traefik-example-web"
+      middlewares: 
+        - "traefik-example-web-addPrefix"
+      entryPoints:
+        - "https"
+      tls:
+        certResolver: "step"
+  middlewares:
+    traefik-example-web-addPrefix:
+      addPrefix:
+        prefix: "/dashboard/"
+  services:
+    traefik-example-web:
+      loadbalancer:
+        servers:
+          - url: "http://192.168.90.254"
