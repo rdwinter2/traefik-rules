@@ -1,6 +1,6 @@
 http:
   routers:
-    git-io:
+    traefik-example-web:
       rule: "Host(`traefik.example.web`)"
       service: "traefik-example-web"
       middlewares: 
