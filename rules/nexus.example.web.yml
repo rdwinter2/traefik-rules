@@ -1,0 +1,14 @@
+http:
+  routers:
+    nexus-example-web:
+      rule: "Host(`traefik.example.web`)"
+      service: "nexus-example-web"
+      entryPoints:
+        - "https"
+      tls:
+        certResolver: "step"
+  services:
+    nexus-example-web:
+      loadbalancer:
+        servers:
+          - url: "http://192.168.90.251:8081"

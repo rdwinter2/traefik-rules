@@ -1,20 +1,20 @@
 http:
   routers:
-    traefik-example-web:
+    repo-example-web:
       rule: "Host(`traefik.example.web`)"
-      service: "traefik-example-web"
+      service: "repo-example-web"
       middlewares: 
-        - "traefik-example-web-addPrefix"
+        - "repo-example-web-addPrefix"
       entryPoints:
         - "https"
       tls:
         certResolver: "step"
   middlewares:
-    traefik-example-web-addPrefix:
+    repo-example-web-addPrefix:
       addPrefix:
-        prefix: "/dashboard/"
+        prefix: "/repository/"
   services:
-    traefik-example-web:
+    repo-example-web:
       loadbalancer:
         servers:
-          - url: "http://192.168.90.254"
+          - url: "http://192.168.90.251:8081"
