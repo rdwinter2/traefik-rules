@@ -1,6 +1,6 @@
 tls:
   options:
-    default:
+    tls-opts:
       minVersion: VersionTLS12
       cipherSuites:
         - TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256
@@ -18,6 +18,6 @@ tls:
         - CurveP384
       sniStrict: true
       clientAuth:
-        caFiles - /rootCA/root_ca.crt
-      clientAuthType: RequireAndVerifyClientCert
-
+        caFiles:
+          - /rootCA/root_ca.crt
+        clientAuthType: RequireAndVerifyClientCert
