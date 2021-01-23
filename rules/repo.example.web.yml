@@ -1,7 +1,7 @@
 http:
   routers:
     repo-example-web:
-      rule: "Host(`traefik.example.web`)"
+      rule: "Host(`repo.example.web`)"
       service: "repo-example-web"
       middlewares: 
         - "repo-example-web-addPrefix"
