@@ -27,4 +27,4 @@ tls:
       clientAuth:
         caFiles:
           - /rootCA/root_ca.crt
-        clientAuthType: RequireAndVerifyClientCert
+#        clientAuthType: RequireAndVerifyClientCert
