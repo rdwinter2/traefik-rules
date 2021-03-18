@@ -1,0 +1,10 @@
+tcp:
+  routers:
+    kind-example-web:
+      rule: "HostSNI(`*.kind.example.web`)"
+      service: kind-example-web
+      tls:
+        passthrough: true
+        loadbalancer:
+          servers:
+            - url: "http://172.22.255.150:443"
