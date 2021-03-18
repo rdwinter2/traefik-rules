@@ -7,4 +7,4 @@ tcp:
         passthrough: true
         loadbalancer:
           servers:
-            - url: "http://172.22.255.150:443"
+            - url: "http://172.22.255.150"
