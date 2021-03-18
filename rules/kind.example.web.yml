@@ -3,8 +3,12 @@ tcp:
     kind-example-web:
       rule: "HostSNI(`*.kind.example.web`)"
       service: kind-example-web
+      entryPoints:
+        - "https"
       tls:
         passthrough: true
+  services:
+    kind-example-web:
         loadbalancer:
           servers:
             - url: "http://172.22.255.150"
