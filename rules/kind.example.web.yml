@@ -11,4 +11,4 @@ tcp:
     kind-example-web:
         loadbalancer:
           servers:
-            - url: "http://172.22.255.150"
+            - address: "172.22.255.150:443"
