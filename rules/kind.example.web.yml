@@ -1,14 +1,14 @@
 tcp:
   routers:
-    kind-example-web:
-      rule: "HostSNI(`*.kind.example.web`)"
-      service: kind-example-web
+    kind-example-com:
+      rule: "HostSNI(`*.kind.example.com`)"
+      service: kind-example-com
       entryPoints:
         - "https"
       tls:
         passthrough: true
   services:
-    kind-example-web:
+    kind-example-com:
         loadbalancer:
           servers:
             - address: "172.22.255.150:443"
