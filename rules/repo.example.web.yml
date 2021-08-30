@@ -1,20 +1,20 @@
 http:
   routers:
-    repo-example-web:
-      rule: "Host(`repo.example.web`)"
-      service: "repo-example-web"
+    repo-example-com:
+      rule: "Host(`repo.example.com`)"
+      service: "repo-example-com"
       middlewares: 
-        - "repo-example-web-addPrefix"
+        - "repo-example-com-addPrefix"
       entryPoints:
         - "https"
       tls:
         certResolver: "step"
   middlewares:
-    repo-example-web-addPrefix:
+    repo-example-com-addPrefix:
       addPrefix:
         prefix: "/repository/"
   services:
-    repo-example-web:
+    repo-example-com:
       loadbalancer:
         servers:
           - url: "http://192.168.90.251:8081"
